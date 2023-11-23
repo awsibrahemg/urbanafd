@@ -1,0 +1,46 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{% static 'img/logo-96.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/crb.css' %}">
+    <title>Urbana Israel</title>
+
+</head>
+<body>
+        <!-- باقي محتوى القالب -->
+        {% include 'parts/header.html' %}
+
+        <div class="orb-heder">
+            <div class="orb-user">
+                <img width="50" height="50" src="{% static 'img/logo-96.png' %}" alt="">
+            </div>
+            <div class="h1-org">
+                <h1>Urbana</h1>
+                <!--<div class="search-box">
+                    <input type="text" placeholder="ابحث هنا...">
+                    <i class="fa fa-search"></i>
+                </div>
+                !-->
+            </div>
+        </div>
+        <div class="alonet">
+        <div class="rouy">
+            <h1>قائمة المشروبات</h1>
+        </div>
+        <div class="rectangle-card">
+            {% for x in dateflt %}
+        <div class="rectangle">
+            <img width="200px" height="210px" src="{{x.image.url}}" alt="">
+            <p class="name-sip">{{x.name}}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
